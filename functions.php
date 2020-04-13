@@ -33,6 +33,13 @@ function register(){
 	if ($password_1 != $password_2) {
 		array_push($errors, "The two passwords do not match");
     }
+
+    if(count($errors) == 0){
+        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+        $salt = substr(str_shuffle($permitted_chars), 0, 10);
+        $password = md5($password_1.$salt);
+
+    }
 }
 
 function display_error() {
