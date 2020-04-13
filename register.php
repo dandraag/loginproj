@@ -1,4 +1,4 @@
-
+<?php require('functions.php') ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,7 @@
             </div>
             <div id="form">
                 <form action="register.php" method="POST">
+                    <?php echo display_error()?>
                     <div class="input-group">
                         <label for="username">Username:</label><br>
                         <input type="text" id="username" name="username"><br>
